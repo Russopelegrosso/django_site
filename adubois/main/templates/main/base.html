@@ -1,0 +1,32 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+</head>
+<body>
+    {% include 'main/nav.html' %}
+    <aside>
+<!--        <img src='{% static "main/img/adubois2.png" %}' alt="liluGames">-->
+<!--        <span class="logo">Lilu</span>-->
+        <ul>
+                <a href="{% url 'index' %}"><li><i class="fas fa-home"></i> Main</li></a>
+                <a href="{% url 'portfolio' %}"><li><i class="fas fa-images"></i> Portfolio</li></a>
+                <a href="{% url 'about' %}"><li><i class="fas fa-address-card"></i> About us</li></a>
+                <a href=""><li><i class="fas fa-paper-plane"></i> Contacts</li></a>
+        </ul>
+    </aside>
+    <main>
+    {% block content %}
+    {% endblock %}
+    </main>
+
+</body>
+</html>

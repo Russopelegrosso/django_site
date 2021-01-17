@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+
+{% block title %} Портфолио {% endblock %}
+{% block content %}
+    <div class="features">
+        <h1>Портфолио</h1>
+        <section class="content">
+            {% if works %}
+                {% for el in works %}
+                    <div class="card">
+                        <img class="card-img" src="{{ el.image.url }}" />
+                        <h3>{{el.title}}</h3>
+                        <p>{{el.descriptions}}</p>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>У вас нет работ!</p>
+            {% endif %}
+        </section>
+    </div>
+{% endblock %}

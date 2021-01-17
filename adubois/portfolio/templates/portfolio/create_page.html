@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+
+{% block title %} Портфолио {% endblock %}
+{% block content %}
+    <div class="features">
+        <h1>Добавить работу</h1>
+        <form method="post">
+            <input type="text" placeholder="Название работы"><br><br>
+            <input type="text" placeholder="Описание работы"><br><br>
+            <input position="relative", right="15px" type="file" placeholder="Добавить изобраение"><br><br>
+            <button class="btn btn-success" type="submit">Добавить работу</button>
+        </form>
+    </div>
+{% endblock %}
