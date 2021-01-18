@@ -6,7 +6,8 @@ class MyWorks(models.Model):
     descriptions = models.TextField('Описание', max_length=30)
     image = models.ImageField(upload_to='portfolio/', blank=True, null=True,
                               verbose_name='Картина')
-    date = models.DateField('Дата публикации')
+    date = models.DateField('Дата публикации', auto_now_add=True,
+                            db_index=True)
 
     def __str__(self):
         return self.title

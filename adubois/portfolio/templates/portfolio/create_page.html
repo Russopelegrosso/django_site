@@ -5,9 +5,11 @@
     <div class="features">
         <h1>Добавить работу</h1>
         <form method="post">
-            <input type="text" placeholder="Название работы"><br><br>
-            <input type="text" placeholder="Описание работы"><br><br>
-            <input position="relative", right="15px" type="file" placeholder="Добавить изобраение"><br><br>
+            {% csrf_token %}
+            {{ form.title }}<br>
+            {{ form.descriptions }}<br>
+            {{ form.image }}
+            <span>{{ error }}</span>
             <button class="btn btn-success" type="submit">Добавить работу</button>
         </form>
     </div>
